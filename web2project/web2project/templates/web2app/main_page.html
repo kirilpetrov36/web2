@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block notes %}
+<div class="main">
+	{% if user_notes%}
+		{% for element in user_notes%}			
+				<form action="{% url 'web2app:open_note' user.username element.theme %}" class="button-note">
+					<button class="item">
+						<h1>{{element.theme}}</h1>
+						<h2>{{element.text}}</h2>						
+					</button>
+				</form>
+		{% endfor %}
+	{% else %}
+		<div class="text-bucket"> <div class="NoNotes">Oops, it seems like you haven`t add any notes yet, </br> try now CLICK NEW NOTE </div></div>
+	{% endif %}
+</div>
+{% endblock %}
+
+{% block user_name%}
+	{{user.username}}
+{% endblock%}
+
+{% block all_buttons%}
+	<form action="{% url 'web2app:note_page' user.username %}" >
+		{% csrf_token %}
+		<button class="sort-button" style="width: 160px"> New note </button>
+	</form>
+	{% if user.admin %}
+		<form action="{% url 'web2app:get_users' user.username%}" >
+			{% csrf_token %}
+			<button class="sort-button" style="width: 160px"> Users </button>
+		</form>
+	{% endif %}
+	<form action="{% url 'web2app:login_page' %}" >
+		{% csrf_token %}
+		<button class="sort-button" style="width: 160px"> Log out </button>
+	</form>
+{% endblock%}

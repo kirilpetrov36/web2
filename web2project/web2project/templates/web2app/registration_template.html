@@ -1,0 +1,28 @@
+{% extends 'RegistrationPage.html' %}
+
+{% block registration_action %}
+
+	<form action="registration" method="POST">
+		{% csrf_token %}
+		<div class="topnav">
+			<input  type="text" placeholder="Username" required name = "Username1">    
+		</div> 
+		<div class="topnav">
+			<input  type="text" placeholder="Password" required name = "Password1">    
+		</div>
+		<div class="topnav">
+			<input  type="text" placeholder="Confirm password" required name = "Confirm_password1">    
+		</div>
+		{% if bool == 0 %}
+			<div class="reg-error"> Passwords don't match </div>
+		{% endif %}
+		<div class="admin-cont">
+			<select name="mod" class="new-select-style-wpandyou">
+				<option value="Admin">Admin</option>
+				<option value="Regular">Regular</option>
+			</select>
+			<input type="submit" class="login_button" value="Create an account">
+		</div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+.button {
+    background-color:  #EDEDED; /* Green #11bb3e*/
+    border: none;
+    color: black;
+    padding: 1% 2%;
+    text-align: center;
+    font-family: sans-serif;
+    min-width: 8em;
+    min-height: 2em;
+    margin: 0 0.5% 0 0;
+    cursor: pointer;
+    width: 10%;
+    height: 100%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+@media only screen and (max-width: 930px) {
+    .button {
+        width: 40%;
+        height: 20%;
+    }
+}
+        
+.butt1:hover {
+  	background-color: #d4d4d4;/*Very green 06a137*/
+    box-shadow: 0 -5px 16px 1px rgba(255,255,255,0.5);
+}
+
+.butt1:active {
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+  	background-color: #e6e6e6;/*Very green #18c420*/
+    box-shadow: 0 -5px 16px 1px rgba(255,255,255,0.5);
+}
+
+.butt2 {
+    background:  #EDEDED;/*Orange*/
+}
+
+.butt2:hover {
+    background-color: #18c420;/*Very orange*/
+    box-shadow: 0 -5px 16px 1px rgba(255,255,255,0.5);
+}
+
+.butt2:active {
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    background-color: #06d146;/*Very very orange*/
+    box-shadow: 0 -5px 16px 1px rgba(255,255,255,0.5);
+}
+
+.butt3 {
+    background: #EDEDED;/*Blue*/
+}
+
+.butt3:hover {
+    background-color: #0954e0;/*Very blue*/
+    box-shadow: 0 -5px 16px 1px rgba(255,255,255,0.5);
+}
+
+.butt3:active {
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    background-color: #3c85e6;/*Very very orange*/
+    box-shadow: 0 -5px 16px 1px rgba(255,255,255,0.5);
+}
+
+.butt4 {
+    background: #EDEDED;/*Red #e32020*/
+}
+
+.butt4:hover {
+    background-color: #e31414;/*Very red*/
+    box-shadow: 0 -5px 16px 1px rgba(255,255,255,0.5);
+}
+
+.butt4:active {
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    background-color: #ed3b3b;/*Very very orange*/
+    box-shadow: 0 -5px 16px 1px rgba(255,255,255,0.5);
+}
+
+.butt5{
+    background-color: transparent;
+    font-size: 1.4em;
+    font-family: sans-serif;
+    margin-right: 1.5%;
+}

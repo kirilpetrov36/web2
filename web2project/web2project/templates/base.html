@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url("{% static "images/img_parallax1.jpg" %}");
+        /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-size: cover;
+    }
+
+    .down-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        flex-wrap: wrap;
+        margin-right: 20%;
+        margin-left: 20%;
+        margin-bottom: 5px;
+    }
+
+
+    @media only screen and (max-width: 950px) {
+
+        .down-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 3%;
+            margin-left: 4%;
+            margin-bottom: 0;
+            justify-content: center;
+        }
+
+        
+    }
+
+    p.user {
+        font-size: 1.4em;
+        font-family: sans-serif;
+        margin-right: 1.5%;
+    }
+
+    .NoNotes{
+        color: white;
+        font-size: 30px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    .text-bucket{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    h2 {
+        overflow: hidden;
+        color: rgb(87, 87, 87);
+        font-size: 15px;
+    }
+ 
+    .button-note {
+        background-color: rgba(1, 1, 1, 0);
+        border-radius: 20px;
+        height: 12em;
+        max-height: 11em;
+        min-width: 15em;
+        width: 100%;
+        margin-bottom: 5%;
+        margin-right: 3%;
+    }
+
+    
+    </style>
+    <link rel="stylesheet" href="{% static 'css/containers.css' %}"></link>
+    <link rel="stylesheet" href="{% static 'css/item.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/search_field.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}"/>
+</head>
+
+<body>
+    <div class="container">
+        <div class="upper-container">
+            <p id="MyNOTES"> MyNOTES </p>
+        </div>
+        <div class="down-container">
+            <div class="button butt5"> {% block user_name %} {% endblock %} </div>
+            {% block all_buttons %} {% endblock %}
+            <!--
+            <div class="sort-button" onClick='location.href="WatchUsers.htm"'> Users </div>
+            <div class="sort-button" onClick='location.href="WatchUsers.htm"'> LogOut </div>
+            <div class="topnav sub">
+                <input type="text" placeholder="Search note...">
+            </div> -->
+        </div>
+                 
+           {% block notes %} {% endblock %}
+        
+    </div>
+</body>
+
+</html>

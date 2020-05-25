@@ -1,0 +1,15 @@
+<form action="{% url 'web2app:login' %}" method="POST">
+	{% csrf_token %}
+	<div class="topnav">
+		<input  type="text" placeholder="Login" required name="username" value="{{user.username}}">    
+	</div> 
+	<div>
+		<input type="password" placeholder="Password" required name="password" value="{{user.password}}" >    
+	</div>
+	<input class="login_button" type="submit" ></input>
+</form>
+		
+
+
+
+

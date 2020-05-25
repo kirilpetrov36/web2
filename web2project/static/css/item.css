@@ -1,0 +1,32 @@
+.item {
+        display: flex;
+        background-color: rgb(255, 255, 255, 0.6);
+        flex-direction: column;
+        box-shadow: 0 0 0.2em #010b23;
+        border: hidden;
+        border-radius: 20px;
+        height: 10em;
+        max-height: 11em;
+        min-width: 15em;
+        width: 20%;
+        margin-bottom: 3%;
+        margin-right: 3%;
+        padding: 0.5% 1%;
+    }
+
+.item:hover {
+    background-color:#c8e8db;       
+}
+
+.item:active {
+    background-color:#92ccde;
+    text-color: white;
+}
+
+#MyNOTES {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    font-family: fangsong;
+    font-weight: 600;
+}

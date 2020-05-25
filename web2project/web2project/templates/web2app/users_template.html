@@ -1,0 +1,37 @@
+{% extends 'WatchUsers.html' %}
+
+{% block users %}
+
+<div class="main" style="margin-top: 10%">
+    <div class="users-cont"> <div class="user-text">Users </div> </div>
+
+	{% if users %}
+	
+		{% for user in users%}
+		
+		<div class="user-cont" id ="user-cont/{{user.username}}" >			
+			<div class="username" id="make_admin/{{user.username}}/text"> {{user.username}}{% if user.admin%} - admin {% endif%} </div>
+			<div class="username"> {{user.note_amount}} {% if user.note_amount == 1%} note {% else %} notes {% endif%} </div>			
+			{% if user.username != user_x.username%}
+				<div id = "make_admin/{{user.username}}" class="make-admin-cont">
+					<button class="make-admin" type="submit" onClick='make_admin(this.parentElement.id)'>make admin</button>						
+				</div>
+				<div id = "delete_user/{{user.username}}" class="make-admin-cont">
+					<button class="delete-user" type="submit" onClick='delete_user(this.parentElement.id)'>delete</button>		
+				</div>
+			{% endif%}
+		</div>
+		
+					
+		{% endfor %}
+		
+	{% else %}
+		<div class="NoNotes"> Oops, it seems like something went wrong </div>
+	{% endif %}
+
+</div>
+<div class="back-button-cont">
+	<button class="login_button back" type="submit" onClick='location.href="{% url 'web2app:main_menu' user_x.username %}"'>back</button>		
+</div>
+
+{% endblock %}

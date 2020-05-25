@@ -1,0 +1,105 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+        background-image: url("{% static "images/img_parallax.jpg" %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        max-height: 100%;
+        margin: 0;
+        font-size: 100%
+        -moz-background-size: 100%; /* Firefox 3.6+ */
+        -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+        -o-background-size: 100%; /* Opera 9.6+ */
+    }
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  	display: flex;
+  	flex-direction: column;
+  	border-radius: 15px;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 50%;
+    height: 70%;
+    padding: 20px;
+    text-align: center;
+}
+a {
+  color: white;
+}
+
+.button-note {
+        background-color: rgba(1, 1, 1, 0);
+        border-radius: 20px;
+        height: 12em;
+        max-height: 11em;
+        min-width: 15em;
+        width: 100%;
+        margin-bottom: 5%;
+        margin-right: 3%;
+    }
+  .username {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: black;
+    align-self: center;
+  }
+
+  .back-button-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .users-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .user-text{
+    font-family: sans-serif;
+    font-size: 45px;
+    color: white;
+  }
+
+
+</style>
+    <link rel="stylesheet" href="{% static 'css/search_field.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/item.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/containers.css' %}"/>
+
+</head>
+<body>
+
+    {% block users%} {% endblock%}
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'ajax_users.js' %}"></script>
+</html>

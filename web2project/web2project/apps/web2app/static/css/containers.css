@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.upper-container {
+    padding: 0 3%;
+    flex-direction: column;
+}
+
+.butt-container {
+    display: flex;
+    margin-left: 3%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    background-color: rgba(1, 1, 1, 0.4);
+    padding: 2%;
+    margin: 0 20% 3% 20%;
+}
+
+.main users {
+    margin: auto;
+}

@@ -1,0 +1,31 @@
+{% extends "note.html" %}
+
+{% block content %}
+
+{% if bool_create %}
+    <form action="{% url 'web2app:save_note' username %}" method="POST">
+        {% csrf_token %}
+            <div class="bg-text">
+                <p style="font-size:50px"> Theme </p>               
+                <textarea name="theme" placeholder="Тема" style="height:50px"></textarea>
+                <textarea name="text" placeholder="Оставьте ваш текст " class="text"></textarea>                  
+                <button type="submit" class="save-button">Save</button>
+            </div>
+    </form>
+{% else %}
+    <form action="{% url 'web2app:edit_note' username note.theme %}" method="POST">
+        {% csrf_token %}
+            <div class="bg-text">
+                <p style="font-size:50px"> Theme </p>
+                <textarea name="theme" placeholder="Тема" style="height:50px">{{note.theme}}</textarea>
+                <textarea name="text" placeholder="Оставьте ваш текст " class="text">{{note.text}}</textarea>
+                <div class="save-delete">
+                    <button type="submit" class="save-button">Save</button>
+                    <div class="Delete" onClick='location.href="{% url 'web2app:delete_note' username note.theme %}"'><i class="far fa-trash-alt fa-2x"></i></div>
+                </div>
+            </div>
+    </form>
+{% endif%}
+
+
+{% endblock %}
